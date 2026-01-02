@@ -1,0 +1,400 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+/* ===== HEADER TOP ===== */
+
+/* Right icons */
+.header-icon {
+    display: flex;
+    gap: 25px;
+}
+
+.icon-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #a43a1c;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+/* Container untuk auth */
+.dropdown-auth {
+    position: relative;
+}
+
+/* Menu Dropdown Auth */
+.auth-menu {
+    position: absolute;
+    top: 35px; /* Jarak dari tombol atas */
+    right: 0;   /* Rata kanan */
+    background-color: #fff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    border-radius: 8px;
+    width: 150px;
+    list-style: none;
+    padding: 8px 0;
+    display: none; /* Sembunyi dulu */
+    z-index: 1000;
+}
+
+/* Munculkan menu */
+.auth-menu.show {
+    display: block;
+}
+
+.auth-menu li a {
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: #333;
+    font-size: 13px;
+    transition: 0.2s;
+}
+
+.auth-menu li a:hover {
+    background-color: #fff7e8;
+    color: #a43a1c;
+}
+
+.auth-menu hr {
+    border: 0;
+    border-top: 1px solid #eee;
+    margin: 5px 0;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+    position: fixed;        /* 🔥 KUNCI UTAMA */
+    top: 0;                 /* NEMPEL PALING ATAS */
+    left: 0;
+    width: 100%;
+    z-index: 9999;          /* BIAR GA KETUTUP KONTEN */
+
+    background-color: #fff7e8;
+    padding: 12px 40px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08); /* opsional tapi cakep */
+}
+
+/* LIST MENU */
+.navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0;              /* 🔥 WAJIB */
+    padding: 0;
+}
+
+/* ITEM */
+.navbar ul li {
+    position: relative;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: #a43a1c;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.logout-btn {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* ================= DROPDOWN ================= */
+.dropdown {
+  position: relative;
+}
+
+/* BOX DROPDOWN */
+.dropdown-menu {
+  position: absolute;
+  top: calc(100% + 6px); /* 🔥 NEMPEL HALUS */
+  left: 0;
+
+  background: #fff;
+  width: 220px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  padding: 8px 0;
+  list-style: none;
+  z-index: 9999;
+
+  display: flex;
+  flex-direction: column;
+  gap:0;
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(6px);
+  transition: 0.2s ease;
+}
+
+
+/* SHOW */
+.dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* ITEM */
+.dropdown-menu li {
+  width: 100%;
+}
+
+.dropdown-menu li a {
+  display: block;
+  padding: 10px 20px;
+  font-size: 14px;
+  color: #a43a1c;
+  width: 100%;
+  box-sizing:border-box;
+  text-align: left;
+  white-space: nowrap; /* 🔥 Biar ga patah ke bawah */
+
+}
+
+.dropdown-menu li a:hover {
+  background-color: #fff1dc;
+}
+
+body {
+    padding-top: 40px; /* tinggi navbar */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.dashboard {
+    padding: 20px 40px;
+}
+
+/* BACKGROUND FULL LAYAR */
+.dashboard-bg {
+    min-height: calc(100vh - 90px); /* tinggi layar dikurangi navbar */
+    padding: 40px 0;
+}
+
+/* konten tetap rapi */
+.dashboard-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px;
+}
+
+/* =================KONTEN============================ */
+* {
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  margin: 0;
+  background: #faf7f4;
+  color: #3b2b22;
+}
+
+/* CONTAINER */
+.account-container {
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+/* TITLE */
+.page-title {
+  font-size: 36px;
+  color: #7a3a1d;
+  margin-bottom: 40px;
+}
+
+/* CARD */
+.profile-card {
+  background: #fff;
+  padding: 40px;
+  border-radius: 24px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+}
+
+/* PROFILE IMAGE */
+.profile-image {
+  width: 140px;
+  height: 140px;
+  background: #e0e0e0;
+  border-radius: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+}
+
+.profile-image .icon {
+  font-size: 60px;
+  color: #9e9e9e;
+}
+
+.profile-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+/* FORM */
+.profile-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 30px;
+  text-align: left;
+}
+
+
+.form-group {
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: none;
+  background: #e6e6e6;
+  font-size: 14px;
+  color: #555;
+}
+
+/* sembunyikan checkbox */
+#edit-toggle {
+  display: none;
+}
+
+.profile-form input {
+  background: #e6e6e6;
+  cursor: not-allowed;
+}
+
+/* default: hanya Edit yang terlihat */
+.save {
+  display: none;
+}
+
+/* saat edit aktif */
+#edit-toggle:checked ~ .profile-card .edit {
+  display: none;
+}
+
+#edit-toggle:checked ~ .profile-card .save {
+  display: inline-block;
+}
+
+
+.edit-btn {
+  background: #8b3f1f;
+  color: #fff;
+  border: none;
+  padding: 12px 28px;  /* ukuran sama untuk semua */
+  border-radius: 14px;
+  font-size: 14px;
+  cursor: pointer;
+  margin-bottom: 30px;
+}
+
+/* Save button hanya beda warna */
+.edit-btn.save {
+  background: #2e7d32; /* hijau */
+}
+
+/* Hover warna saja */
+.edit-btn:hover {
+  background: #6f2f15; /* untuk Edit */
+}
+
+.edit-btn.save:hover {
+  background: #256628; /* untuk Save */
+}
+
+
+
+
+
+/* =================FOTTER============================ */
+
+.footer {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  background-color: #5b1f0f;
+  padding: 40px 20px;
+  flex-wrap: wrap;
+  margin:0px;
+  width: 100%;
+  max-width: none;
+}
+
+@media (max-width: 576px) {
+  .footer {
+    justify-content :center;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .footer-item {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+.footer-item {
+  flex:1 1 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width:300px;
+}
+
+
+.footer-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: white;
+  text-align: center;
+}
+
+
+.footer-icon {
+  width: 36px;
+  height: 36px;
+}
+
+
+.footer-text {
+  font-size: 14px;
+  color: white;
+}
+/* =================FOTTER END============================ */

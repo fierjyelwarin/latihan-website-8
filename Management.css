@@ -1,0 +1,207 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+/* ===== HEADER TOP ===== */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+
+.header-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 40px;
+}
+
+/* Logo */
+.logo h1 {
+    color: #a43a1c;
+    font-weight: 700;
+}
+
+.logo span {
+    font-size: 12px;
+    color: #555;
+}
+
+/* Search */
+.search-box {
+    position: relative;
+    width: 45%;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 12px 45px 12px 20px;
+    border-radius: 25px;
+    border: none;
+    background-color: #f1f1f1;
+    outline: none;
+}
+
+.search-box i {
+    position: absolute;
+    right: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #a43a1c;
+}
+
+/* Right icons */
+.header-icon {
+    display: flex;
+    gap: 25px;
+}
+
+.icon-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #a43a1c;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+    background-color: #fff7e8;
+    padding: 12px 40px;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: center; /* INI KUNCINYA */
+    align-items: center;
+    gap: 250px;
+}
+
+.navbar ul li {
+    position: relative;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: #a43a1c;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* ===== DROPDOWN ===== */
+.dropdown-menu {
+    position: absolute;
+    top: 100%; 
+    left: 50%;
+    transform: translateX(-50%); /* Agar dropdown rapi di tengah menu Main */
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    width: 200px;
+    
+    /* KUNCINYA DI SINI */
+    display: none !important; /* Paksa sembunyi total */
+    
+    list-style: none;
+    padding: 10px 0;
+    z-index: 9999;
+    border-radius: 6px;
+}
+
+/* Hanya muncul jika ada class .show */
+.dropdown-menu.show {
+    display: block !important; 
+}
+
+/* Perbaikan agar teks di dalam dropdown tidak berantakan ke samping */
+.dropdown-menu li {
+    width: 100%;
+    display: block; /* Memastikan list item berderet ke bawah */
+}
+
+.dropdown-menu li a {
+    padding: 10px 20px;
+    display: block !important; /* Paksa link memenuhi lebar */
+    color: #a43a1c !important;
+    text-align: left;
+    font-size: 14px;
+}
+
+body {
+    padding-top: 160px; 
+    min-height: 100vh; /* Memastikan body minimal setinggi layar */
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* =================FOTTER============================ */
+
+.footer {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  background-color: #5b1f0f;
+  padding: 40px 20px;
+  flex-wrap: wrap;
+  margin:0px;
+  width: 100%;
+  max-width: none;
+}
+
+@media (max-width: 576px) {
+  .footer {
+    justify-content :center;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .footer-item {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+.footer-item {
+  flex:1 1 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width:300px;
+}
+
+
+.footer-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: white;
+  text-align: center;
+}
+
+
+.footer-icon {
+  width: 36px;
+  height: 36px;
+}
+
+
+.footer-text {
+  font-size: 14px;
+  color: white;
+}
+/* =================FOTTER END============================ */

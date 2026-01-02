@@ -1,0 +1,444 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+/* ===== HEADER TOP ===== */
+
+/* Right icons */
+.header-icon {
+    display: flex;
+    gap: 25px;
+}
+
+.icon-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #a43a1c;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+/* Container untuk auth */
+.dropdown-auth {
+    position: relative;
+}
+
+/* Menu Dropdown Auth */
+.auth-menu {
+    position: absolute;
+    top: 35px; /* Jarak dari tombol atas */
+    right: 0;   /* Rata kanan */
+    background-color: #fff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    border-radius: 8px;
+    width: 150px;
+    list-style: none;
+    padding: 8px 0;
+    display: none; /* Sembunyi dulu */
+    z-index: 1000;
+}
+
+/* Munculkan menu */
+.auth-menu.show {
+    display: block;
+}
+
+.auth-menu li a {
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: #333;
+    font-size: 13px;
+    transition: 0.2s;
+}
+
+.auth-menu li a:hover {
+    background-color: #fff7e8;
+    color: #a43a1c;
+}
+
+.auth-menu hr {
+    border: 0;
+    border-top: 1px solid #eee;
+    margin: 5px 0;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+    position: fixed;        /* 🔥 KUNCI UTAMA */
+    top: 0;                 /* NEMPEL PALING ATAS */
+    left: 0;
+    width: 100%;
+    z-index: 9999;          /* BIAR GA KETUTUP KONTEN */
+
+    background-color: #fff7e8;
+    padding: 12px 40px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08); /* opsional tapi cakep */
+}
+
+/* LIST MENU */
+.navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0;              /* 🔥 WAJIB */
+    padding: 0;
+}
+
+/* ITEM */
+.navbar ul li {
+    position: relative;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: #a43a1c;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.logout-btn {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* ================= DROPDOWN ================= */
+.dropdown {
+  position: relative;
+}
+
+/* BOX DROPDOWN */
+.dropdown-menu {
+  position: absolute;
+  top: calc(100% + 6px); /* 🔥 NEMPEL HALUS */
+  left: 0;
+
+  background: #fff;
+  width: 220px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  padding: 8px 0;
+  list-style: none;
+  z-index: 9999;
+
+  display: flex;
+  flex-direction: column;
+  gap:0;
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(6px);
+  transition: 0.2s ease;
+}
+
+
+/* SHOW */
+.dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* ITEM */
+.dropdown-menu li {
+  width: 100%;
+}
+
+.dropdown-menu li a {
+  display: block;
+  padding: 10px 20px;
+  font-size: 14px;
+  color: #a43a1c;
+  width: 100%;
+  box-sizing:border-box;
+  text-align: left;
+  white-space: nowrap; /* 🔥 Biar ga patah ke bawah */
+
+}
+
+.dropdown-menu li a:hover {
+  background-color: #fff1dc;
+}
+
+body {
+    padding-top: 40px; /* tinggi navbar */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.dashboard {
+    padding: 20px 40px;
+}
+
+/* BACKGROUND FULL LAYAR */
+.dashboard-bg {
+    min-height: calc(100vh - 90px); /* tinggi layar dikurangi navbar */
+    padding: 40px 0;
+}
+
+/* konten tetap rapi */
+.dashboard-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px;
+}
+
+/* =================KONTEN============================ */
+
+/* ================= BODY ================= */
+body{
+  padding-top:40px;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+}
+
+/* ================= DASHBOARD ================= */
+.dashboard-bg{
+  flex:1;
+  padding:40px 0;
+}
+
+.dashboard-container{
+  max-width:100%;
+}
+
+
+/* ================= TITLE ================= */
+.section-title{
+  color:#a43a1c;
+  font-style:italic;
+  font-weight:800;
+  margin-bottom:10px;
+  text-align: center;
+}
+
+.page-desc{
+  font-size:14px;
+  margin-bottom:30px;
+  color:#555;
+  text-align: center;
+}
+
+/* ================= FILTER ================= */
+.filter-simple{
+  display:flex;
+  gap:12px;
+  margin-bottom:30px;
+  flex-wrap:wrap;
+}
+
+.filter-simple input,
+.filter-simple select{
+  height:42px;
+  padding:0 14px;
+  border-radius:8px;
+  border:1px solid #ddd;
+  font-size:14px;
+}
+
+/* ================= TABLE ================= */
+.table-box{
+  background:#fff;
+  padding:30px;
+  border-radius:12px;
+  box-shadow:0 4px 8px rgba(0,0,0,0.1);
+}
+
+table{
+  width:100%;
+  border-collapse:collapse;
+}
+
+thead{
+  background:#a43a1c;
+}
+
+thead th{
+  color:white;
+  padding:14px;
+  text-align:left;
+}
+
+tbody td{
+  padding:14px;
+  border-bottom:1px solid #eee;
+  font-size:14px;
+}
+
+/* ================= STATUS ================= */
+.status{
+  font-weight:600;
+}
+
+.status.verified{color:green;}
+.status.pending{color:orange;}
+.status.suspended{color:red;}
+
+/* ================= BUTTON ================= */
+.btn-view{
+  background:#fff1dc;
+  color:#a43a1c;
+  padding:6px 12px;
+  border-radius:6px;
+  text-decoration:none;
+  font-size:13px;
+  margin-right:6px;
+}
+
+.btn-edit{
+  background:#a43a1c;
+  color:white;
+  padding:6px 12px;
+  border-radius:6px;
+  text-decoration:none;
+  font-size:13px;
+}
+
+/* Overlay Modal (Latar Belakang) */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    /* Sembunyikan secara default */
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+    z-index: 10000;
+}
+
+/* Logic Utama: Jika ID dipanggil di URL, maka tampilkan */
+.modal-overlay:target {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Kartu Modal */
+.modal-card {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 450px;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+/* Tombol Close */
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 24px;
+    text-decoration: none;
+    color: #333;
+}
+
+/* Form di dalam Modal */
+.modal-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.modal-form input, .modal-form select {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.modal-body p {
+    margin-bottom: 10px;
+    font-size: 14px;
+    border-bottom: 1px solid #eee;
+   padding-bottom: 5px;
+}
+
+/* ================= INFO ================= */
+.table-info{
+  margin-top:14px;
+  font-size:13px;
+  color:#666;
+}
+
+
+/* =================FOTTER============================ */
+
+.footer {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  background-color: #5b1f0f;
+  padding: 40px 20px;
+  flex-wrap: wrap;
+  margin:0px;
+  width: 100%;
+  max-width: none;
+}
+
+@media (max-width: 576px) {
+  .footer {
+    justify-content :center;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .footer-item {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+.footer-item {
+  flex:1 1 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width:300px;
+}
+
+
+.footer-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: white;
+  text-align: center;
+}
+
+
+.footer-icon {
+  width: 36px;
+  height: 36px;
+}
+
+
+.footer-text {
+  font-size: 14px;
+  color: white;
+}
+/* =================FOTTER END============================ */

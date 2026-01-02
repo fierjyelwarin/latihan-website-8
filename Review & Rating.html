@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nom-Nom Map | Admin</title>
+    <link rel="stylesheet" href="Review & rating.css">
+    <!-- Icon (Font Awesome) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script src="style.js"></script>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+    <!-- ===== NAVBAR ===== -->
+    <nav class="navbar">
+        <ul>
+            <li class="dropdown">
+    <a href="index.html" id="mainMenu">
+        <i class="fa-solid fa-table-cells"></i> Main
+        <i class="fa-solid fa-chevron-down"></i>
+    </a>
+
+    <ul class="dropdown-menu" id="mainDropdown">
+        <li><a href="Data User.html">Data User</a></li>
+        <li><a href="Data Restoran.html">Data Restoran</a></li>
+        <li><a href="Review & Rating.html">Review & Rating</a></li>
+        <li><a href="Report Analytics.html">Report Analytics</a></li>
+    </ul>
+</li>
+
+            <li class="dropdown">
+      <a href="#">
+        <i class="fa-solid fa-users-gear"></i> Management
+        <i class="fa-solid fa-chevron-down"></i>
+      </a>
+
+      <ul class="dropdown-menu">
+        <li><a href="Resto Category.html">Resto Category</a></li>
+        <li><a href="Bookmark Management.html">Bookmark Management</a></li>
+      </ul>
+    </li>
+
+            <li>
+                <a href="Settings.html"><i class="fa-solid fa-gear"></i> Settings</a>
+            </li>
+
+            <li>
+                <a href="Account.html"><i class="fa-regular fa-user"></i> Account</a>
+            </li>
+
+            <li>
+            <a href="login.html" class="logout-btn"
+   onclick="return confirm('are you sure want to exit')">
+   <i class="fa-solid fa-right-from-bracket"></i> Log out
+</a>
+
+            </li>
+
+        </ul>
+    </nav>
+</header>
+
+<!-- ===== KONTEN ===== -->
+<!-- HEADER -->
+<main class="container">
+<header class="page-header">
+    <h1>Review & Rating</h1>
+    <p>Ulasan jujur dari pengunjung tentang tempat kuliner favorit</p>
+</header>
+
+<!-- REVIEW SECTION -->
+<!-- SUMMARY -->
+    <div class="summary-box">
+        <div class="summary-item">
+            <h3>124</h3>
+            <span>Total Review</span>
+        </div>
+        <div class="summary-item">
+            <h3>4.6</h3>
+            <span>Rata-rata Rating</span>
+        </div>
+        <div class="summary-item">
+            <h3>18</h3>
+            <span>Pending Review</span>
+        </div>
+    </div>
+
+    <!-- FILTER -->
+    <div class="filter-bar">
+        <input type="text" placeholder="Cari nama restoran...">
+        <select>
+            <option>Semua Status</option>
+            <option>Published</option>
+            <option>Pending</option>
+        </select>
+        <select>
+            <option>Semua Rating</option>
+            <option>★★★★★</option>
+            <option>★★★★☆</option>
+            <option>★★★☆☆</option>
+        </select>
+    </div>
+
+    <!-- REVIEW LIST -->
+    <div class="review-list">
+
+        <!-- ITEM -->
+        <div class="review-card">
+            <img src="https://i.pravatar.cc/150?u=charlie" alt="">
+            <div class="review-detail">
+                <div class="review-top">
+                    <span class="username">Charlie_19</span>
+                    <span class="status published">Published</span>
+                </div>
+
+                <div class="rating">★★★★★</div>
+
+                <p class="review-text">Delicious 😋</p>
+
+                <small>20 Desember 2025 • Cafe Nusantara</small>
+            </div>
+
+            <div class="review-action">
+    <a href="#modal-approve" class="btn approve">Approve</a>
+    <a href="#modal-delete" class="btn delete">Delete</a>
+</div>
+        </div>
+
+        <!-- ITEM -->
+        <div class="review-card">
+            <img src="https://i.pravatar.cc/150?u=perry" alt="">
+            <div class="review-detail">
+                <div class="review-top">
+                    <span class="username">Perry_E</span>
+                    <span class="status pending">Pending</span>
+                </div>
+
+                <div class="rating">★★★★☆</div>
+
+                <p class="review-text">
+                    Banyak spot foto dan fasilitasnya lengkap
+                </p>
+
+                <small>18 Desember 2025 • Kopi Senja</small>
+            </div>
+
+            <div class="review-action">
+    <a href="#modal-approve" class="btn approve">Approve</a>
+    <a href="#modal-delete" class="btn delete">Delete</a>
+</div>
+        </div>
+
+<div id="modal-approve" class="popup-wrapper">
+    <div class="popup-box">
+        <a href="#" class="close-btn">&times;</a>
+        <h3>Konfirmasi Approve</h3>
+        <p>Apakah ulasan ini sudah layak untuk dipublikasikan?</p>
+        <form>
+            <label style="display:block; margin: 10px 0 5px; font-size: 13px;">Kategori Ulasan:</label>
+            <select style="width:100%; padding: 8px; margin-bottom: 15px;">
+                <option>Ulasan Sangat Baik</option>
+                <option>Ulasan Standar</option>
+            </select>
+            <div style="display: flex; gap: 10px;">
+                <a href="#" class="btn-batal">Batal</a>
+                <button type="submit" class="btn approve">Ya, Publish</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div id="modal-delete" class="popup-wrapper">
+    <div class="popup-box">
+        <a href="#" class="close-btn">&times;</a>
+        <h3>Hapus Review</h3>
+        <p>Kenapa review ini dihapus?</p>
+        <form>
+            <textarea placeholder="Contoh: Mengandung unsur SARA atau Spam" style="width:100%; height:80px; padding:10px; margin: 10px 0;"></textarea>
+            <div style="display: flex; gap: 10px;">
+                <a href="#" class="btn-batal">Batal</a>
+                <button type="submit" class="btn delete">Hapus Permanen</button>
+            </div>
+        </form>
+    </div>
+</div>
+</main>
+
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+
+  <div class="footer-item">
+    <a href="https://instagram.com/nomnommap" target="_blank" class="footer-link">
+      <img src="INSTA.png" alt="Instagram" class="footer-icon">
+      <span class="footer-text">@nomnommap</span>
+    </a>
+  </div>
+
+  <div class="footer-item">
+    <a href="mailto:nomnommap@gmail.com" class="footer-link">
+      <img src="EMAIL.png" alt="Email" class="footer-icon">
+      <span class="footer-text">nomnommap@gmail.com</span>
+    </a>
+  </div>
+
+  <div class="footer-item">
+    <a href="tel:+628123456789" class="footer-link">
+      <img src="TELEPON.png" alt="Phone" class="footer-icon">
+      <span class="footer-text">+62 812-3456-789</span>
+    </a>
+  </div>
+
+</footer>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nom-Nom Map | Admin</title>
+    <link rel="stylesheet" href="Report Analytics.css">
+    <!-- Icon (Font Awesome) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script src="style.js"></script>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+    <!-- ===== NAVBAR ===== -->
+    <nav class="navbar">
+        <ul>
+            <li class="dropdown">
+    <a href="index.html" id="mainMenu">
+        <i class="fa-solid fa-table-cells"></i> Main
+        <i class="fa-solid fa-chevron-down"></i>
+    </a>
+
+    <ul class="dropdown-menu" id="mainDropdown">
+        <li><a href="Data User.html">Data User</a></li>
+        <li><a href="Data Restoran.html">Data Restoran</a></li>
+        <li><a href="Review & Rating.html">Review & Rating</a></li>
+        <li><a href="Report Analytics.html">Report Analytics</a></li>
+    </ul>
+</li>
+
+            <li class="dropdown">
+      <a href="#">
+        <i class="fa-solid fa-users-gear"></i> Management
+        <i class="fa-solid fa-chevron-down"></i>
+      </a>
+
+      <ul class="dropdown-menu">
+        <li><a href="Resto Category.html">Resto Category</a></li>
+        <li><a href="Bookmark Management.html">Bookmark Management</a></li>
+      </ul>
+    </li>
+
+            <li>
+                <a href="Settings.html"><i class="fa-solid fa-gear"></i> Settings</a>
+            </li>
+
+            <li>
+                <a href="Account.html"><i class="fa-regular fa-user"></i> Account</a>
+            </li>
+
+            <li>
+            <a href="login.html" class="logout-btn"
+   onclick="return confirm('are you sure want to exit')">
+   <i class="fa-solid fa-right-from-bracket"></i> Log out
+</a>
+
+            </li>
+
+        </ul>
+    </nav>
+</header>
+
+<!-- ===== KONTEN ===== -->
+<main class="analytics-container">
+
+  <div class="page-header">
+  <h1 class="page-title">Report Analytics</h1>
+  <p class="page-desc">
+    Ringkasan data review & rating yang akan dikirimkan kepada pemilik restoran.
+  </p>
+</div>
+
+
+  <!-- SUMMARY CARDS -->
+  <section class="summary">
+    <div class="card">
+      <h3>Total Restoran</h3>
+      <p>48</p>
+    </div>
+
+    <div class="card">
+      <h3>Total Review</h3>
+      <p>1.284</p>
+    </div>
+
+    <div class="card">
+      <h3>Rata-rata Rating</h3>
+      <p>4.5 ⭐</p>
+    </div>
+
+    <div class="card">
+      <h3>Review Hari Ini</h3>
+      <p>32</p>
+    </div>
+  </section>
+
+  <!-- TABLE -->
+   <div class="report-header">
+  <h2>Laporan per Restoran</h2>
+  <a href="#addReport" class="btn-add">+ Add Report</a>
+</div>
+
+<div id="addReport" class="modal">
+
+  <div class="modal-content">
+    <h3>Tambah Report Analytics</h3>
+
+    <form action="#">
+      <label>Nama Restoran</label>
+      <input type="text" required>
+
+      <label>Jumlah Review</label>
+      <input type="number" required>
+
+      <label>Rating Rata-rata</label>
+      <input type="number" step="0.1" max="5" required>
+
+      <div class="modal-actions">
+        <a href="#" class="btn-cancel">Batal</a>
+        <button type="submit" class="btn-save">Simpan</button>
+      </div>
+    </form>
+  </div>
+
+</div>
+
+<div class="modal" id="reportModal">
+  <div class="modal-content">
+
+    <h3>Tambah Report Analytics</h3>
+
+    <form>
+      <label>Nama Restoran</label>
+      <input type="text" placeholder="Masukkan nama restoran">
+
+      <label>Jumlah Review</label>
+      <input type="number" placeholder="Contoh: 120">
+
+      <label>Rating Rata-rata</label>
+      <input type="number" step="0.1" placeholder="Contoh: 4.5">
+
+      <div class="modal-actions">
+        <button type="button" class="btn-cancel" onclick="closeModal()">Batal</button>
+        <button type="submit" class="btn-save">Simpan</button>
+      </div>
+    </form>
+
+  </div>
+</div>
+
+  <section class="report-table">
+
+    <table>
+      <thead>
+        <tr>
+          <th>Nama Restoran</th>
+          <th>Jumlah Review</th>
+          <th>Rating Rata-rata</th>
+          <th>Status</th>
+          <th>Aksi</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>Resto Nusantara</td>
+          <td>120</td>
+          <td>4.6 ⭐</td>
+          <td><span class="status sent">Terkirim</span></td>
+          <td>
+            <button class="btn resend">Kirim Ulang</button>
+          </td>
+        </tr>
+
+        <tr>
+          <td>Kopi Senja</td>
+          <td>87</td>
+          <td>4.2 ⭐</td>
+          <td><span class="status pending">Belum</span></td>
+          <td>
+            <button class="btn send">Kirim</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+
+  <div class="footer-item">
+    <a href="https://instagram.com/nomnommap" target="_blank" class="footer-link">
+      <img src="INSTA.png" alt="Instagram" class="footer-icon">
+      <span class="footer-text">@nomnommap</span>
+    </a>
+  </div>
+
+  <div class="footer-item">
+    <a href="mailto:nomnommap@gmail.com" class="footer-link">
+      <img src="EMAIL.png" alt="Email" class="footer-icon">
+      <span class="footer-text">nomnommap@gmail.com</span>
+    </a>
+  </div>
+
+  <div class="footer-item">
+    <a href="tel:+628123456789" class="footer-link">
+      <img src="TELEPON.png" alt="Phone" class="footer-icon">
+      <span class="footer-text">+62 812-3456-789</span>
+    </a>
+  </div>
+
+</footer>

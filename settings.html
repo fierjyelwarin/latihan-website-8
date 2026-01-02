@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nom-Nom Map | Admin</title>
+    <link rel="stylesheet" href="settings.css">
+    <!-- Icon (Font Awesome) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script src="style.js"></script>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+    <!-- ===== NAVBAR ===== -->
+    <nav class="navbar">
+        <ul>
+            <li class="dropdown">
+    <a href="index.html" id="mainMenu">
+        <i class="fa-solid fa-table-cells"></i> Main
+        <i class="fa-solid fa-chevron-down"></i>
+    </a>
+
+    <ul class="dropdown-menu" id="mainDropdown">
+        <li><a href="Data User.html">Data User</a></li>
+        <li><a href="Data Restoran.html">Data Restoran</a></li>
+        <li><a href="Review & Rating.html">Review & Rating</a></li>
+        <li><a href="Report Analytics.html">Report Analytics</a></li>
+    </ul>
+</li>
+
+            <li class="dropdown">
+      <a href="#">
+        <i class="fa-solid fa-users-gear"></i> Management
+        <i class="fa-solid fa-chevron-down"></i>
+      </a>
+
+      <ul class="dropdown-menu">
+        <li><a href="Resto Category.html">Resto Category</a></li>
+        <li><a href="Bookmark Management.html">Bookmark Management</a></li>
+      </ul>
+    </li>
+
+            <li>
+                <a href="Settings.html"><i class="fa-solid fa-gear"></i> Settings</a>
+            </li>
+
+            <li>
+                <a href="Account.html"><i class="fa-regular fa-user"></i> Account</a>
+            </li>
+
+            <li>
+            <a href="login.html" class="logout-btn"
+   onclick="return confirm('are you sure want to exit')">
+   <i class="fa-solid fa-right-from-bracket"></i> Log out
+</a>
+
+            </li>
+
+        </ul>
+    </nav>
+</header>
+
+<!-- ===== KONTEN ===== -->
+<!-- MAIN CONTENT -->
+  <main class="settings-page">
+
+    <!-- PAGE TITLE -->
+    <header class="page-title">
+      <h1>Settings</h1>
+      <p>Pengaturan sistem dan akun admin.</p>
+    </header>
+
+    <!-- SETTINGS CONTENT -->
+    <section class="settings-wrapper">
+
+      <!-- Informasi Sistem -->
+      <article class="settings-card">
+        <h3>Informasi Sistem</h3>
+
+        <label>Nama Aplikasi</label>
+        <input type="text" value="Nom-Nom Map" disabled>
+
+        <label>Email Admin</label>
+        <input type="email" value="admin@nomnommap.id" disabled>
+      </article>
+
+      <!-- Keamanan -->
+      <article class="settings-card">
+        <h3>Keamanan Akun</h3>
+
+        <label>Password Lama</label>
+        <input type="password" placeholder="********">
+
+        <label>Password Baru</label>
+        <input type="password" placeholder="********">
+
+        <button class="btn-save">Simpan Perubahan</button>
+      </article>
+
+    </section>
+
+  </main>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+
+  <div class="footer-item">
+    <a href="https://instagram.com/nomnommap" target="_blank" class="footer-link">
+      <img src="INSTA.png" alt="Instagram" class="footer-icon">
+      <span class="footer-text">@nomnommap</span>
+    </a>
+  </div>
+
+  <div class="footer-item">
+    <a href="mailto:nomnommap@gmail.com" class="footer-link">
+      <img src="EMAIL.png" alt="Email" class="footer-icon">
+      <span class="footer-text">nomnommap@gmail.com</span>
+    </a>
+  </div>
+
+  <div class="footer-item">
+    <a href="tel:+628123456789" class="footer-link">
+      <img src="TELEPON.png" alt="Phone" class="footer-icon">
+      <span class="footer-text">+62 812-3456-789</span>
+    </a>
+  </div>
+
+</footer>
